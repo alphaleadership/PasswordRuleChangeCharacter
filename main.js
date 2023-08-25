@@ -13,7 +13,8 @@ function remplacerCaracteres(phrase) {
 
   for (let i = 0; i < caracteres.length; i++) {
     if (caracteres[i] === "A") {
-      caracteres[i] = "#"; // Règle de remplacement. Changez les valeurs entre les guillemets
+      // Règle de remplacement. Changez les valeurs entre les guillemets
+      caracteres[i] = "#";
     }
     if (caracteres[i] === "l") {
       caracteres[i] = "!";
@@ -22,13 +23,13 @@ function remplacerCaracteres(phrase) {
       caracteres[i] = "€";
     }
     if (caracteres[i] === "e") {
-      caracteres[i] = "c";
+      caracteres[i] = "3";
     }
     if (caracteres[i] === "a") {
       caracteres[i] = "@";
     }
     if (caracteres[i] === "u") {
-      caracteres[i] = "ù";
+      caracteres[i] = "^";
     }
   }
 
