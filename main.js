@@ -1,6 +1,10 @@
 // Importer le module 'readline' pour lire l'entrée depuis le terminal
 const readline = require("readline");
-
+const rules=[
+  ["A","#"],
+  ["l","!"],
+  ["E","€"]
+]
 // Créer une interface de lecture
 const rl = readline.createInterface({
   input: process.stdin,
@@ -9,31 +13,13 @@ const rl = readline.createInterface({
 
 // Fonction pour remplacer les caractères
 function remplacerCaracteres(phrase) {
-  let caracteres = phrase.split("");
 
-  for (let i = 0; i < caracteres.length; i++) {
-    if (caracteres[i] === "A") {
-      // Règle de remplacement. Changez les valeurs entre les guillemets
-      caracteres[i] = "#";
-    }
-    if (caracteres[i] === "l") {
-      caracteres[i] = "!";
-    }
-    if (caracteres[i] === "E") {
-      caracteres[i] = "€";
-    }
-    if (caracteres[i] === "e") {
-      caracteres[i] = "3";
-    }
-    if (caracteres[i] === "a") {
-      caracteres[i] = "@";
-    }
-    if (caracteres[i] === "u") {
-      caracteres[i] = "^";
-    }
+
+  for (let i = 0; i < rules.length; i++) {
+    phrase.replace(rules[i][0],rules[i][1])
   }
 
-  let nouvellePhrase = caracteres.join("");
+  let nouvellePhrase = phrase
   nouvellePhrase = nouvellePhrase.replace(/\s+/g, ""); // Supprimer les espaces
   return nouvellePhrase;
 }
